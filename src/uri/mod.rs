@@ -140,8 +140,8 @@ enum ErrorKind {
     SchemeTooLong,
 }
 
-// u16::MAX is reserved for None
-const MAX_LEN: usize = (u16::MAX - 1) as usize;
+// 256 * 1024 is reserved for NONE
+const MAX_LEN: usize = 256 * 1024 - 1;
 
 // URI_CHARS is a table of valid characters in a URI. An entry in the table is
 // 0 for invalid characters. For valid characters the entry is itself (i.e.
