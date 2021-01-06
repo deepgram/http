@@ -140,8 +140,8 @@ enum ErrorKind {
     SchemeTooLong,
 }
 
-// u16::MAX is reserved for None
-const MAX_LEN: usize = (u16::MAX - 1) as usize;
+// 150_001 is for NONE
+const MAX_LEN: usize = 150_000;
 
 const URI_CHARS: [u8; 256] = [
     //  0      1      2      3      4      5      6      7      8      9

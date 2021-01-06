@@ -632,7 +632,7 @@ impl<T> HeaderMap<T> {
     /// ```
     pub fn reserve(&mut self, additional: usize) {
         // TODO: This can't overflow if done properly... since the max # of
-        // elements is u16::MAX.
+        // elements is 150_000
         let cap = self
             .entries
             .len()
