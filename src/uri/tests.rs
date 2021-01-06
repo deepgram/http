@@ -445,7 +445,7 @@ fn test_uri_parse_error() {
 fn test_max_uri_len() {
     let mut uri = vec![];
     uri.extend(b"http://localhost/");
-    uri.extend(vec![b'a'; 70 * 1024]);
+    uri.extend(vec![b'a';256 * 1024 - uri.len()]);
 
     let uri = String::from_utf8(uri).unwrap();
     let res: Result<Uri, InvalidUri> = uri.parse();
